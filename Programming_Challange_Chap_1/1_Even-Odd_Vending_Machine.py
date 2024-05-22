@@ -11,42 +11,31 @@ your program should use the is_integer() method to display an error message if t
 with significant digits beyond the decimal point. 
 '''
 
-def is_integer(prompt):
-    while True:
-        try:
-            user_input = input(prompt)
-            # Convert the input to an integer
-            user_input_int = int(user_input)
-            # Check if the input is a float
-            if float(user_input) != user_input_int:
-                raise ValueError("Input is a float number.")
-            return user_input_int
-        except ValueError as e:
-            print(f"Invalid input: {e}. Please enter a valid integer.")
+def get_integer_input(prompt):
+  while True:
+    try:
+      # convert the input to a float
+      user_input = float(input(prompt))
+
+      # check if the float is an integer
+      if user_input.is_integer():
+        return int(user_input)
+      else:
+        print("Please enter an integer")
+    except ValueError:
+      print("Please enter a valid number.")
 
 def even_odd_vending(num):
   if (num % 2) == 0:
-    print(num)
+    print(f"{num} is even.")
   else:
-    print(num)
+    print(f"{num} is odd")
 
-  count = 1
+  count =1 
   while count <= 9:
     num += 2
     print(num)
     count += 1
-
-def get_integer_input(prompt):
-  while True:
-    try:
-      user_input = float(input(prompt))
-      
-      if user_input.is_integer():
-        return int(user_input)
-      else: 
-        print("Please enter an integer.")
-    except ValueError:
-      print("Please enter a valid number.")
 
 if __name__ == "__main__":
   num = get_integer_input("Enter an integer: ")
