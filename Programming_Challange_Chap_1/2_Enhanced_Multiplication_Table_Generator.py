@@ -23,7 +23,13 @@ def get_integer_input(prompt, default=None):
 
 
 if __name__ == "__main__":
-  a = get_integer_input("Enter the number to multiply: ")
-  b = get_integer_input("Enter the number of times to multiply (press Enter for default 10): ", default=10)
+  while True:
+    a = get_integer_input("Enter the number to multiply: ")
+    b = get_integer_input("Enter the number of times to multiply (press Enter for default 10): ", default=10)
 
-  multi_table(a, b)
+    multi_table(a, b)
+
+    cont = input('Do you want to perform another conversation? (yes/y/no): ').lower()
+    if cont not in ('yes', 'y'):
+      print('Goodbye')
+      break

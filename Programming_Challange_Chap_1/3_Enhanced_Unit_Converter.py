@@ -49,19 +49,25 @@ def fahren_celsius():
 
 
 if __name__ == "__main__":
-  print_menu()
-  choice = input('Which conversion would you like to do?: ')
+  while True:
+    print_menu()
+    choice = input('Which conversion would you like to do?: ')
 
-  options = { 
-    '1': km_miles,
-    '2': miles_km,
-    '3': kilo_Pound,
-    '4': pound_kilo,
-    '5': celsius_fahren,
-    '6': fahren_celsius
-  }
+    options = { 
+      '1': km_miles,
+      '2': miles_km,
+      '3': kilo_Pound,
+      '4': pound_kilo,
+      '5': celsius_fahren,
+      '6': fahren_celsius
+    }
 
-  if choice in options:
-    options[choice]()
-  else:
-    print("Invalid choice. Please select a valid option.")
+    if choice in options:
+      options[choice]()
+    else:
+      print("Invalid choice. Please select a valid option.")
+
+    cont = input('Do you want to perform another conversation? (yes/y/no): ').lower()
+    if cont not in ('yes', 'y'):
+      print('Goodbye')
+      break

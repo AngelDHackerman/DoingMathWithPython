@@ -38,5 +38,11 @@ def even_odd_vending(num):
     count += 1
 
 if __name__ == "__main__":
-  num = get_integer_input("Enter an integer: ")
-  even_odd_vending(num)
+  while True:
+    num = get_integer_input("Enter an integer: ")
+    even_odd_vending(num)
+
+    cont = input('Do you want to perform another conversation? (yes/y/no): ').lower()
+    if cont not in ('yes', 'y'):
+      print('Goodbye')
+      break
