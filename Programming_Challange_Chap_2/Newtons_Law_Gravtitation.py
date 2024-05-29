@@ -17,7 +17,6 @@ def draw_graph(x, y):
 def generate_F_r():
   # Generate valeus for r
   r = range(100, 1001, 50)
-  print(r)
   # Empty list to store the calculated values of F
   F = []
 
