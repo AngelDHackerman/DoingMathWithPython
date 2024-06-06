@@ -22,7 +22,7 @@ def frange(start, final, increment):
   return numbers
 
 def draw_trajectory(u, theta):
-  theta = math.radians(theta)
+  theta = math.radians(theta) # converst from degrees to radians
   g = 9.8
 
   # Time of flight 
@@ -34,7 +34,7 @@ def draw_trajectory(u, theta):
   y = []
   for t in intervals:
     x.append(u*math.cos(theta)*t)
-    y.append(u*math.sin(theta)*t - 0.5*g*t*t)
+    y.append(u*math.sin(theta)*t - 0.5*g*t*t) # 0.5*g*t*t, this represents the fall of the projectil due to gravety
 
   draw_graph(x, y)
 
