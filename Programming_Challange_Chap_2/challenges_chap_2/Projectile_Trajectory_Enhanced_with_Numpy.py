@@ -1,43 +1,34 @@
-# Draw the trajectory of a body in projectile motion
+# Draw the trajectory of a body in projectile motion (using numpy)
 
+import numpy as np
 from matplotlib import pyplot as plt 
-import math
 
 def draw_graph(x, y, labels):
+  print(f'Array use to calculate the trajectory of X {x}')
+  print(f'Array use to calculate the trajectory of Y {y}')
+  print(labels)
+
   for i in range(len(x)):
-    plt.plot(x[i], y[i], label = labels[i])
-  plt.xlabel('x-coordiante')
-  plt.ylabel('y-coordiante')
+    plt.plot(x[i], y[i], label=labels[i])
+  plt.xlabel('x-coordinate')
+  plt.ylabel('y-coordinate')
   plt.title('Projectile motion of ball')
   plt.legend()
 
-
-# Generate equally spaced floating point numbers between two given values
-
-def frange(start, final, increment):
-  numbers = []
-  while start < final:
-    numbers.append(start)
-    start = start + increment
-
-  return numbers
-
-def calculate_trajectory(u, theta):
-  theta = math.radians(theta)
+def calculate_trajectory(u, theta): 
+  theta = np.radians(theta)
   g = 9.8
 
   # Time to flight 
-  t_flight = 2 * u * math.sin(theta) / g 
-  # Find the intervals 
-  intervals = frange(0, t_flight, 0.001)
-  # List of x and y coordinates
-  x = []
-  y = []
-  for t in intervals: 
-    x.append(u * math.cos(theta) * t )
-    y.append(u * math.sin(theta) * t - 0.5 * g * t * t)
+  t_flight = 2 * u * np.sin(theta) / g
+  # Generate intervals using numpy
+  t = np.arange(0, t_flight, 0.001)
 
-  return x, y 
+  # Calculate x and y coordiantes using numpy arrays
+  x = u * np.cos(theta) * t
+  y = u * np.sin(theta) * t - 0.5 * g * t**2
+
+  return x, y
 
 def draw_trajectory(num_trajectories, velocities, angles):
   all_x = []
