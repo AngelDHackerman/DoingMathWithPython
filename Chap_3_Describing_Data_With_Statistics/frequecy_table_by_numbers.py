@@ -1,12 +1,18 @@
 
 # Frequency table for a list of numbers 
+# Enhanced to display the table sorted by the numbers
 
 from collections import Counter
 
 def frequency_table(numbers):
   table = Counter(numbers)
-  print('Number\tFrequency')
-  for number in table.most_common():
+  numbers_freq = table.most_common()
+  # print(numbers_freq)
+  numbers_freq.sort()
+  # print(numbers_freq)
+
+  print('Number\tFrenquency')
+  for number in numbers_freq:
     print('{0}\t{1}'.format(number[0], number[1]))
 
 
