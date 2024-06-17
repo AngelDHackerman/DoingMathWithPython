@@ -1,7 +1,4 @@
 
-
-# todo: TERMINAR DE entender los pasos que se siguen para ver la formula de el factor de correlation (la formula dibujada en el libro)
-
 def find_corr_x_y(x, y):
   n = len(x)
 
