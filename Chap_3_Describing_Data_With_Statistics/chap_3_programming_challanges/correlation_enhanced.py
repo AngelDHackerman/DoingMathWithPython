@@ -29,4 +29,3 @@ if __name__ == "__main__":
   correlation = calculate_correlation(x, y)
   if correlation is not None:
     print("the correlation coefficient is: ", correlation)
-
