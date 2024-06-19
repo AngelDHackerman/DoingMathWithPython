@@ -30,3 +30,5 @@ if __name__ == "__main__":
   print(f"Mode: {mode}")
   print(f"Varian: {variance}")
   print(f"Standard Deviation: {std_dev}")
+
+
