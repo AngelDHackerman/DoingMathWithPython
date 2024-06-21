@@ -24,9 +24,6 @@ data.to_csv('simulated_population_data.csv', index=False)
 # Step 2: Calculate the differences between years, adds the 'Population_Difference' column to the data frame
 data['Population_Difference'] = data['Population'].diff().fillna(0) # .diff() es un metodo de pandas que calcula la diferencia entre un valor y otro de data['Population']
 
-    #  SEGUIR PRENGUNTADO A CHAT-GPT AQUI
-
-
 # Calculate statistics of the differences
 mean_diff = data['Population_Difference'].mean()
 median_diff = data['Population_Difference'].median()
