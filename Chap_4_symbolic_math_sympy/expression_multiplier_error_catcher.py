@@ -1,4 +1,6 @@
 # Product of two expressions
+# expr1 = x**2 + x*2 + x
+# expr2 = x**3 + x*3 + x
 
 from sympy import expand, sympify
 from sympy.core.sympify import SympifyError
