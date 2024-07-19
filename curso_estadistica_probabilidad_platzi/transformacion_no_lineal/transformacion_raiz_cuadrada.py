@@ -2,16 +2,17 @@
 La transformación no lineal es una técnica de preprocesamiento de datos que se utiliza para aplicar funciones no lineales a las características de los datos. 
 Estas transformaciones pueden ayudar a manejar relaciones no lineales entre las características y las variables objetivo, y a mejorar el rendimiento de los modelos de machine learning.
 
-Aplica el logaritmo natural a las características. Es útil para datos que siguen una distribución exponencial o cuando se quiere reducir la varianza de los datos.
+Aplica la raíz cuadrada a las características. Es útil para datos que tienen una varianza creciente.
 '''
 
 import numpy as np
 
 # Datos originales
-data = np.array([1, 10, 100, 1000])
+data = np.array([1, 4, 9, 16])
 
-# Tranformacion logaritmica 
-log_data = np.log(data)
+# Transformacion de raiz cuadrada
+sqrt_data = np.sqrt(data)
 
-print(log_data)
-# Output: [0.         2.30258509 4.60517019 6.90775528]
+print(sqrt_data)
+
+# Output: [1. 2. 3. 4.]
