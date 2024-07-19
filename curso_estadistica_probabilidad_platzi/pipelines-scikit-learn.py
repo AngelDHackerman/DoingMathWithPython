@@ -8,6 +8,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.decomposition import PCA
 
 # Supongamos que tenemos un DataFrame 'df' con datos numéricos y categóricos
+df = "fictional_data_set_here"
 
 # Definimos las columnas numéricas y categóricas
 numeric_features = ['age', 'income', 'score']
